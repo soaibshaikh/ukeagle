@@ -1,0 +1,73 @@
+@import "./function.scss";
+@import "./reset";
+
+.contact-form {
+  label {
+    color: black;
+    @include flex(flex-start, center);
+    gap: 0.5rem;
+
+    & > i {
+      color: #69932e !important;
+    }
+  }
+  .form-group {
+    & > input,
+    textarea,
+    select {
+      font-size: clamp(1.2rem, 1.6rem, 2vw);
+      padding-block: 1rem;
+    }
+
+    & > select {
+      & > option {
+        padding-block: 2rem !important;
+      }
+    }
+  }
+
+  .default-button {
+    max-width: max-content;
+  }
+}
+
+.contact-form-address {
+  padding: 1rem 2rem;
+  & > :not(:nth-child(1)) {
+    width: 100%;
+  }
+
+  .main-heading {
+    font-size: clamp(2.5rem, 3rem, 3vw);
+  }
+
+  & :nth-child(2) {
+    & > section {
+      padding-block: 2rem;
+
+      & > :nth-child(1) {
+        @include flex(flex-start, center);
+        gap: 1rem;
+      }
+      & > * {
+        padding-block: 2rem;
+      }
+      & > :nth-child(2) {
+        color: black;
+        font-size: 2rem;
+      }
+
+      & > h1 > i {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  & > li {
+    padding-block: 1rem;
+    & > a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}

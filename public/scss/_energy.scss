@@ -1,0 +1,109 @@
+@import "./function.scss";
+@import "./reset";
+
+.xeno-content {
+  padding-block-end: clamp(3rem, 5rem, 4vw);
+
+  .main-heading {
+    font-size: clamp(1.8rem, 2.5rem, 1.5vw);
+    padding-block: 0.5rem;
+  }
+
+  p {
+    font-size: clamp(1.2rem, 1.6rem, 3vw);
+  }
+
+  // .xeno-image {
+  //   & > img {
+  //     width: 100%;
+
+  //     @include media("<=1200px") {
+  //       width: 15rem;
+  //     }
+  //   }
+  // }
+}
+
+.xeno-content-item {
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  padding: clamp(1rem, 2rem, 2vw);
+}
+
+.enery-card-heading {
+  text-align: center;
+  padding-block: 2rem;
+  font-size: clamp(2rem, 3rem, 3vw);
+}
+
+.nav-item {
+  .nav-link {
+    color: black !important;
+    &.active {
+      background-color: $primary-color !important;
+      color: white !important;
+    }
+  }
+}
+
+.energy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  place-items: center;
+  gap: clamp(1rem, 2rem, 2vw);
+
+  @include media("<=1200px") {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
+.energy-card {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  @include media("<=576px") {
+    flex-direction: column-reverse;
+    gap: clamp(0.5rem, 2rem, 2vw);
+    padding-block-start: 5rem;
+  }
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  .right {
+    & > img {
+      width: 20rem;
+    }
+  }
+
+  .left {
+    & > :not(:nth-child(1)) {
+      margin-top: 1rem;
+    }
+    @include media("<=576px") {
+      text-align: center;
+      .main-heading {
+        font-size: 1.8rem !important;
+      }
+
+      & > :nth-child(1) {
+        width: 100%;
+        position: absolute;
+        top: 2rem;
+        text-wrap: wrap;
+        left: 0;
+      }
+    }
+  }
+}
+
+.energy-cont {
+  & > :not(:nth-child(1)) {
+    margin-top: 1rem;
+  }
+}
+.energy-img {
+  & > img {
+    width: 100%;
+  }
+}

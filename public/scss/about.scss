@@ -1,0 +1,83 @@
+@import "./function.scss";
+@import "./reset";
+
+.banner-outer {
+  background-image: url("/public/images/about/UKEagle\ About\ Banner\ .jpg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0rem -20rem;
+
+  position: relative;
+  @include media("<=1200px") {
+    background-position: 0rem -10rem;
+    @include media("<=768px") {
+      background-position: 0rem -5rem;
+      @include media("<=576px") {
+        background-position: 0rem 0rem;
+      }
+    }
+  }
+
+  z-index: 0;
+  @include flex(center, center);
+  &::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #25247bb0;
+    z-index: 1;
+  }
+
+  .banner-row {
+    min-height: 20vh;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.ours-cards {
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.agriculture-banner,
+.energy-banner,
+.infra-banner,
+.pharma-banner,
+.market-banner,
+.log-banner {
+  background-position: bottom;
+  @include media("<=650px") {
+    background-position: bottom 5rem;
+  }
+  &::after {
+    background: none;
+  }
+}
+.agriculture-banner {
+  background-image: url("/public/images/banners-image/AgricultureBanner_og.jpeg") !important;
+}
+
+.energy-banner {
+  background-image: url("/public/images/banners-image/EnergyBanner_og.jpeg") !important;
+}
+
+.infra-banner {
+  background-image: url("/public/images/banners-image/InfrastructureBanner_og.jpeg") !important;
+}
+
+.pharma-banner {
+  background-image: url("/public/images/banners-image/PharmaceuticalBanner_og.jpeg") !important;
+}
+
+.market-banner {
+  background-image: url("/public/images/banners-image/SupermarketsBanner_og.jpeg") !important;
+}
+
+.log-banner {
+  background-image: url("/public/images/banners-image/LogisticBanner_og.jpeg") !important;
+}
